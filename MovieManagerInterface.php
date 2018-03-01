@@ -5,8 +5,8 @@
  */
 interface MovieManagerInterface
 {
-  function create(string $file);
-  function read(string $path);
+  function create(Movie $movie);
+  function read();
   function readOneById();
   function update();
 }

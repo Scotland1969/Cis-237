@@ -22,7 +22,7 @@ function readFromFile(string $path) {
   // A variable to store the path to the entries.txt file.
   $path = "$document_root/../Movies/entries.txt";
 
-  
+
 
   /*
    Calls the function readFrom File and pass to it the file path as an
