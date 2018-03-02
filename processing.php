@@ -46,27 +46,33 @@ function readFromFile(string $path) {
 
   $movie_list = explode("\n", trim($list));
   $table_body = '';
-  foreach ($movie_list as $entry) {
+  foreach ($movie_list as $id => $entry) {
     $movies = explode(',',trim($entry));
     $table_body .= '<tr>';
-    $table_body .= '<td>' . $movies[0] . '</td>';
+    $table_body .= '<td>'.$id. ' ' . $movies[0] . '</td>';
     $table_body .= '<td>' . $movies[1] . '</td>';
     $table_body .= '<td>' . $movies[2] . '</td>';
     $table_body .= '<td>' . $movies[3] . '</td>';
     $table_body .= '<td>' . $movies[4] . '</td>';
+    $table_body .= '<td><a href="edit.php?id='.$id.'" class="btn btn-info btn-sm">Edit</a></td>';
     $table_body .= '</tr>';
   }
 
    //Creates an object of the Movie class
    $movie = new Movie($name, $director, $artist, $ratings, $Genre);
    //Creates an object of the FileMovieManager class
+
    $tester = new FileMovieManager($path);
    //Calls the create function
-   $tester->create($movie);
+   $retCreate = $tester->create($movie);
    //Calls the read function
-   $tester->read($path);
+   $retRead = $tester->read();
 
+   $id = 91;
 
+   $tester->readOneById($id);
+
+   $retUpdate = $tester->update($id,$movie);
 
 ?>
 
