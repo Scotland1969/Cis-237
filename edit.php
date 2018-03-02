@@ -1,5 +1,5 @@
 <?php
-require ("processing.php");
+//require ("FileMovieManager.php");
 
 $id = null;
 
@@ -7,11 +7,6 @@ if (isset($_GET) && Isset($_GET['id'])){
   $id = $_GET['id'];
 
 }
-
-
-
-
-
 
 
 ?>
