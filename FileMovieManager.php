@@ -1,23 +1,26 @@
 <?php
 
   require ("MovieManagerInterface.php") ;
-  require ("Movie.php");
+
 
   class FileMovieManager implements MovieManagerInterface{
 
 
 
-   function __construct(string $path) {
+   function __construct($path) {
 
-     $this->path = $path;  
+     $this->path = $path;
+
 
     }
 
-    function create($movie) {
+    function create($movie):bool{
 
-      $content = "$movie->name,$movie->director,$movie->artist,$movie->artist, $movie->ratings,$movie->genre";
 
-      $fp = fopen($path, 'ab');
+
+      $content = "$movie->name,$movie->director,$movie->artist, $movie->ratings,$movie->genre";
+
+      $fp = fopen($this->path, 'ab');
       if (!$fp){
         return false;
       }
@@ -33,16 +36,19 @@
     }
 
 
-    function read() {
+    function read():string {
 
-      $list = file_get_contents($path);
+      $list = file_get_contents($this->path);
+
+      return $list;
 
     }
-    function readOneById() {
+    function readOneById(int $id) {
+         
 
     }
-    function update() {
-
+    function update(int $id,Movie $movie):bool {
+       return true;
     }
 
 }
