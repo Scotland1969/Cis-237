@@ -1,24 +1,13 @@
 <?php
-/*
-   A function that accepts the file path and contents as its arguments. Then
-   opens and writes the information stored in the contents variable to that
-   file.
-*/
-require  'Movie.php';
-require 'FileMovieManager.php';
+
 
 $list = '';
 
-
-function printArray($array) {
-  echo '<prev>' . print_r($array,true) . '</prev>';
-}
 
 /* A function that accepts the file path as an argument. Then uses the function
    file_get_contents to read the entire file and stores this information in the
    variable $list.
 */
-
 function readFromFile(string $path) {
 
     $list = file_get_contents($path);
@@ -33,8 +22,6 @@ function readFromFile(string $path) {
   // A variable to store the path to the entries.txt file.
   $path = "$document_root/../Movies/entries.txt";
 
-  // Gets the user input through the global variable $_GET.
-  extract($_GET);
 
 
   /*
@@ -56,17 +43,6 @@ function readFromFile(string $path) {
     $table_body .= '<td>' . $movies[4] . '</td>';
     $table_body .= '</tr>';
   }
-
-   //Creates an object of the Movie class
-   $movie = new Movie($name, $director, $artist, $ratings, $Genre);
-   //Creates an object of the FileMovieManager class
-   $tester = new FileMovieManager($path);
-   //Calls the create function
-   $tester->create($movie);
-   //Calls the read function
-   $tester->read($path);
-
-
 
 ?>
 
