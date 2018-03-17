@@ -20,7 +20,7 @@ if (isset($_GET) && Isset($_GET['id'])){
 
   </head>
   <?php require ("FileMovieManager.php");?>
-  <body style="background-color:red">
+  <body class = "layered-image"">
 
     <nav class="navbar navbar-default">
       <div class="container-fluid">

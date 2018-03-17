@@ -16,7 +16,7 @@
 
     function create($movie):bool{
 
-
+      echo "This is the FileMoviemanager ";
 
       $content = "$movie->name,$movie->director,$movie->artist, $movie->ratings,$movie->genre";
 
@@ -38,16 +38,20 @@
 
     function read():string {
 
+      echo "This is the FileMoviemanager ";
+
       $list = file_get_contents($this->path);
 
       return $list;
 
     }
     function readOneById(int $id) {
-         
+
 
     }
     function update(int $id,Movie $movie):bool {
+
+      echo "This is the FileMoviemanager ";
        return true;
     }
 

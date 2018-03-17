@@ -3,27 +3,19 @@
 
 class Movie {
 //Creates the class attributes
-private $movieName = '';
-private $movieDirector = '';
-private $movieArtist = '';
-private $movieRating = '';
-private $movieGenre = '';
+private $name = '';
+private $phone_number = '';
+private $email = '';
 
 
 
-//
-function __construct(string $name, $director, $artist, $ratings, $genre) {
+function __construct(string $name, $phone_number, $email) {
   $this->name = $name;
-  $this->director = $director;
-  $this->artist = $artist;
-  $this->ratings = $ratings;
-  $this->genre = $genre;
+  $this->phone_number = $phone_number;
+  $this->email = $email;
+
 }
 
-//Creates the accessor method __get
-  function  __get($attr_name) {
-    return $this->$attr_name;
-  }
 //Creates the accessor method __set
   function __set($attr_name, $value) {
     $this->$attr_name = $value;
